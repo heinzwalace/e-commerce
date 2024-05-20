@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart
+{% endblock %}
+
+{% block body %}
+	<h1>Cart</h1>
+	{% include "cart/resume.html.twig" %}
+	{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+		<a href="{{path('cart_checkout')}}">Checkout</a>
+	{% else %}
+		<a href="{{path('login')}}">Login</a>
+	{% endif %}
+{% endblock %}
